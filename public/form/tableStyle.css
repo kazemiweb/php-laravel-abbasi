@@ -1,0 +1,15 @@
+.div {
+    position: absolute;
+    right: 30%;
+    top: 10%;
+    width: 30%;
+    height: 60%;
+    background-color: rgb(135, 135, 139);
+}
+
+.table {
+    border-color: blue;
+    position: absolute;
+    right: 20%;
+    top: 10%;
+}
