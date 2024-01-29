@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,22 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('contact-form', function () {
     return view('form.send');
 });
 Route::get('edit-form', function () {
     return view('form.edit');
 });
+
 Route::get('list-form', function () {
     return view('form.list');
 });
-Route::get('information-user', function () {
-    return view('users.information');
-});
-Route::get('edit-user', function () {
-    return view('users.edit');
-});
-Route::get('list-user', function () {
-    return view('users.list');
+//اطلاعات کاربران
+Route::group(['prefix' => 'users'], function () {
+    Route::get('information', [UserController::class, 'informationuser']);
+    Route::get('edit', [UserController::class, 'edit']);
+
+    Route::get('list', [UserController::class, 'list']);
 });

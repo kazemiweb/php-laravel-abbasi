@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="users/user-info.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/users/user-info.css">
 </head>
 
 <body class="body">

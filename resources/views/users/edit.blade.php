@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="users/user-info.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/users/user-info.css">
 </head>
 
 <body class="body">
     <div class="div-1";>
         <h4 class="h4">ویرایش اطلاعات خود</h4>
         <form action="" method="POST" class="form">
-            <input type="text" name="" class="text" placeholder="نام و نام خانوادگی">
+            s<input type="text" name="" class="text" placeholder="نام و نام خانوادگی">
             <br>
             <br>
             <input type="emai" name="" class="email" placeholder="ایمیل">
@@ -27,7 +27,7 @@
             <br>
             <br>
             <input type="number" name="" class="number" placeholder="مقطع تحصیلی">
-            <br><br>
+             <br><br>
 
             <input type="date" name="" class="date">
 

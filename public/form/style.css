@@ -1,50 +1,50 @@
 .body {
-    direction: rtl;
-    background-color: rgb(77, 69, 85);
+direction: rtl;
+background-color: rgb(77, 69, 85);
 }
 
 .div-1 {
 
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    right: 40%;
-    top: 10%;
-    width: 30%;
-    height: 60%;
+background-color: rgb(255, 255, 255);
+position: absolute;
+right: 40%;
+top: 10%;
+width: 30%;
+height: 60%;
 
 
 }
 
 .form {
-    margin: 10%;
+margin: 10%;
 }
 
 .text {
-    height: 30px;
-    width: 300px;
+height: 30px;
+width: 300px;
 }
 
 .email {
-    height: 30px;
-    width: 300px;
+height: 30px;
+width: 300px;
 }
 
 .password {
-    height: 30px;
-    width: 300px;
+height: 30px;
+width: 300px;
 }
 
 .password-1 {
-    height: 30px;
-    width: 300px;
+height: 30px;
+width: 300px;
 }
 
 .button {
-    height: 30px;
-    width: 100px;
+height: 30px;
+width: 100px;
 }
 
 h2 {
-    margin-right: 150px;
-    color: rgb(151, 200, 240);
+margin-right: 150px;
+color: rgb(151, 200, 240);
 }
