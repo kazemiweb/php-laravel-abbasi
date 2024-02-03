@@ -27,7 +27,7 @@
             <br>
             <br>
             <input type="number" name="" class="number" placeholder="مقطع تحصیلی">
-             <br><br>
+            <br><br>
 
             <input type="date" name="" class="date">
 
