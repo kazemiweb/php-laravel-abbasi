@@ -30,9 +30,13 @@ Route::get('list-form', function () {
     return view('form.list');
 });
 //اطلاعات کاربران
-Route::group(['prefix' => 'users'], function () {
-    Route::get('information', [UserController::class, 'informationuser']);
+Route::group(["prefix" => "users", "as" => "users."], function () {
+    Route::get('createpage', [UserController::class, 'createpage'])->name('createpage');
     Route::get('edit', [UserController::class, 'edit']);
-
     Route::get('list', [UserController::class, 'list']);
+    //
+    Route::post('create', [UserController::class, 'create'])->name('create');
+    Route::post('update', [UserController::class, 'update'])->name('update');
+    Route::get('index', [UserController::class, 'index'])->name('index');
+    Route::delete('delete', [UserController::class, 'delete'])->name('delete');
 });
