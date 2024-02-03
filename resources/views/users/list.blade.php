@@ -26,84 +26,28 @@
     <div class="div-1">
         <table border="1" class="table">
             <tr>
+
                 <td>نام و نام خانوادگی</td>
                 <td>ایمیل</td>
-                <td>رمزعبور</td>
                 <td>موبایل</td>
                 <td>مقطع تحصیلی</td>
                 <td>تولد</td>
                 <td>استان</td>
                 <td>شهرستان</td>
-
+                
             </tr>
+            @foreach ($list as $lists)
+                <tr>
+                    <td>{{ $lists->name }}</td>
+                    <td>{{ $lists->email }}</td>
+                    <td>{{ $lists->phonenumber }}</td>
+                    <td>{{ $lists->grade }}</td>
+                     <td>{{ $lists->date }}</td>
+                    <td>{{ $lists->city }}</td>
+                    <td>{{ $lists->state }}</td>
 
-            <tr>
-                <td>بهاره سلیمانی</td>
-                <td>ju.gmail.com</td>
-                <td>123</td>
-                <td>123356</td>
-                <td>8</td>
-                <td>1383\3\4</td>
-                <td>تهران</td>
-                <td>ورامین</td>
-
-            </tr>
-            <tr>
-                <td>بهاره سلیمانی</td>
-                <td>ju.gmail.com</td>
-                <td>123</td>
-                <td>123356</td>
-                <td>8</td>
-                <td>1383\3\4</td>
-                <td>تهران</td>
-                <td>ورامین</td>
-
-            </tr>
-            <tr>
-                <td>بهاره سلیمانی</td>
-                <td>ju.gmail.com</td>
-                <td>123</td>
-                <td>123356</td>
-                <td>8</td>
-                <td>1383\3\4</td>
-                <td>تهران</td>
-                <td>ورامین</td>
-
-            </tr>
-            <tr>
-                <td>بهاره سلیمانی</td>
-                <td>ju.gmail.com</td>
-                <td>123</td>
-                <td>123356</td>
-                <td>8</td>
-                <td>1383\3\4</td>
-                <td>تهران</td>
-                <td>ورامین</td>
-
-            </tr>
-            <tr>
-                <td>بهاره سلیمانی</td>
-                <td>ju.gmail.com</td>
-                <td>123</td>
-                <td>123356</td>
-                <td>8</td>
-                <td>1383\3\4</td>
-                <td>تهران</td>
-                <td>ورامین</td>
-
-            </tr>
-            <tr>
-                <td>بهاره سلیمانی</td>
-                <td>ju.gmail.com</td>
-                <td>123</td>
-                <td>123356</td>
-                <td>8</td>
-                <td>1383\3\4</td>
-                <td>تهران</td>
-                <td>ورامین</td>
-
-            </tr>
-
+                </tr>
+            @endforeach
         </table>
     </div>
     <div class="icon-bar">
