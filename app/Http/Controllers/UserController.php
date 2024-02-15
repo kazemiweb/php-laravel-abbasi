@@ -7,14 +7,37 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    //pages
     public function createpage()
     {
         return view('users.createpage');
     }
-    public function edit()
+
+    public function edit($id)
     {
-        return view('users.edit');
+        $edit = DB::table('users')
+            ->select(
+                'name',
+                'email',
+                'password',
+                'phonenumber',
+                'grade',
+                'city',
+                'state',
+                'date',
+                'id',
+            )->where('id', $id)
+            ->first();
+
+        return view('users.edit', ['edit' => $edit]);
     }
+
+
+
+
+
+
+
     public function list()
     {
         $list = DB::table('users')->select(
@@ -25,12 +48,12 @@ class UserController extends Controller
             'grade',
             'city',
             'state',
-            'date'
-            
+            'date',
+            'id',
         )->get();
-        return view('users.list', ["list"=>$list]);
+        return view('users.list', ["list" => $list]);
     }
-    //
+    //methode
     public function create(Request $request)
     {
         DB::table('users')->insert([
@@ -45,13 +68,30 @@ class UserController extends Controller
         ]);
         return redirect()->route('users.createpage');
     }
-    public function update()
+    public function update(Request $request, $id)
     {
+        DB::table('users')
+            ->where('id', $id)
+            ->update([
+                "name" => $request->name,
+                "email" => $request->email,
+                "password" => $request->password,
+                "phonenumber" => $request->phonenumber,
+                "grade" => $request->grade,
+                "city" => $request->city,
+                "state" => $request->state,
+                "date" => $request->date,
+            ]);
+        return redirect()->route('users.list');
     }
     public function index()
     {
     }
-    public function delete()
+    public function delete($id)
     {
+        DB::table('users')
+        ->where('id',$id)
+        ->delete();
+        return redirect()->route('users.list');
     }
 }
