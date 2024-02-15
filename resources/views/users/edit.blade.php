@@ -12,26 +12,28 @@
 <body class="body">
     <div class="div-1";>
         <h4 class="h4">ویرایش اطلاعات خود</h4>
-        <form action="" method="POST" class="form">
-            s<input type="text" name="" class="text" placeholder="نام و نام خانوادگی">
+        <form action="{{ route('users.update',['id'=>$edit->id])  }}" method="POST" class="form">
+            @csrf
+            <input type="text" name="name" value="{{ $edit->name }}" placeholder="نام و نام خانوادگی">
             <br>
             <br>
-            <input type="emai" name="" class="email" placeholder="ایمیل">
+            <input type="emai" name="email" value="{{ $edit->email }}" class="email" placeholder="ایمیل">
             <br>
             <br>
-            <input type="password" name="" class="password" placeholder="رمزعبور">
+            <input type="password" name="password"  class="password" placeholder="رمزعبور">
             <br>
             <br>
 
-            <input type="text" name="" class="text-2" placeholder="موبایل">
+            <input type="text" name="phonenumber" value="{{ $edit->phonenumber }}" class="text-2"
+                placeholder="موبایل">
             <br>
             <br>
-            <input type="number" name="" class="number" placeholder="مقطع تحصیلی">
+            <input type="number" name="grade" value="{{ $edit->grade }}" class="grade" placeholder="مقطع تحصیلی">
             <br><br>
 
-            <input type="date" name="" class="date">
+            <input type="date" name="date" class="date" value="{{ $edit->date }}">
 
-            <select class="select">
+            <select class="select" name="city" value="{{ $edit->city }}">
                 <option>استان</option>
                 <option>تهران</option>
                 <option>مشهد</option>
@@ -40,7 +42,7 @@
                 <option>تبریز</option>
             </select>
 
-            <select class="select">
+            <select class="select" name="state" value="{{ $edit->state }}">
                 <option>شهرستان</option>
                 <option>ورامین</option>
                 <option>رباط کریم</option>
@@ -51,12 +53,12 @@
             <br>
             <br>
             <input type="radio" name="radio" class="radio" value="مرد">
-            زن
-            <input type="radio" name="radio" class="radio" value="زن">
             مرد
+            <input type="radio" name="radio" class="radio" value="زن">
+            زن
             <br>
             <br>
-            <input type="button" name="" class="button" value="ثبت ویرایش">
+            <input type="submit" name="" class="button" value="ارسال">
 
 
         </form>
