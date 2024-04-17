@@ -51,7 +51,7 @@ class UserController extends Controller
             'date',
             'id',
         )->get();
-        return view('users.list', ["list" => $list]);
+        return response()->json(['users.list',"list" => $list]);
     }
     //methode
     public function create(Request $request)
@@ -90,8 +90,8 @@ class UserController extends Controller
     public function delete($id)
     {
         DB::table('users')
-        ->where('id',$id)
-        ->delete();
+            ->where('id', $id)
+            ->delete();
         return redirect()->route('users.list');
     }
 }
