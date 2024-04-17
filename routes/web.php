@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
@@ -40,4 +41,13 @@ Route::group(["prefix" => "users", "as" => "users."], function () {
     Route::post('update/{id}', [UserController::class, 'update'])->name('update');
     Route::get('index', [UserController::class, 'index'])->name('index');
     Route::delete('delete/{id}', [UserController::class, 'delete'])->name('delete');
+});
+
+//product
+Route::group(["prefix"=> "products", "as" => "products."],function()
+{
+    Route::get('createpage',[ProductController::class,'createpage'])->name('createpage');
+
+    Route::post('create', [ProductController::class, 'create'])->name('create');
+
 });
