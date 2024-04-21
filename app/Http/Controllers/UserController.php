@@ -13,6 +13,7 @@ class UserController extends Controller
         return view('users.createpage');
     }
 
+
     public function edit($id)
     {
         $edit = DB::table('users')
@@ -40,7 +41,7 @@ class UserController extends Controller
 
     public function list()
     {
-        $list = DB::table('users')->select(
+        $users = DB::table('users')->select(
             'name',
             'email',
             'password',
@@ -51,7 +52,7 @@ class UserController extends Controller
             'date',
             'id',
         )->get();
-        return response()->json(['users.list',"list" => $list]);
+        return response()->json(["users" => $users]);
     }
     //methode
     public function create(Request $request)
@@ -66,7 +67,7 @@ class UserController extends Controller
             "state" => $request->state,
             "date" => $request->date,
         ]);
-        return redirect()->route('users.createpage');
+        return response()->json(["message"=>'user added']);
     }
     public function update(Request $request, $id)
     {
@@ -82,16 +83,14 @@ class UserController extends Controller
                 "state" => $request->state,
                 "date" => $request->date,
             ]);
-        return redirect()->route('users.list');
+        return response()->json(["message"=>'user updated']);
     }
-    public function index()
-    {
-    }
+
     public function delete($id)
     {
         DB::table('users')
             ->where('id', $id)
             ->delete();
-        return redirect()->route('users.list');
+        return response()->json(["message" => 'user deleted']);
     }
 }

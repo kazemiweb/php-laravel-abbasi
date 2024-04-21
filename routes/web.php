@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 
@@ -30,13 +32,15 @@ Route::get('edit-form', function () {
 Route::get('list-form', function () {
     return view('form.list');
 });
+
+
 //اطلاعات کاربران
 //pages
 Route::group(["prefix" => "users", "as" => "users."], function () {
     Route::get('createpage', [UserController::class, 'createpage'])->name('createpage');
     Route::get('edit/{id}', [UserController::class, 'edit'])->name('edit');
     Route::get('list', [UserController::class, 'list'])->name('list');
-    //
+    //methode
     Route::post('create', [UserController::class, 'create'])->name('create');
     Route::post('update/{id}', [UserController::class, 'update'])->name('update');
     Route::get('index', [UserController::class, 'index'])->name('index');
@@ -44,10 +48,30 @@ Route::group(["prefix" => "users", "as" => "users."], function () {
 });
 
 //product
-Route::group(["prefix"=> "products", "as" => "products."],function()
-{
-    Route::get('createpage',[ProductController::class,'createpage'])->name('createpage');
-
+//page
+Route::group(["prefix" => "products", "as" => "products."], function () {
+    Route::get('createpage', [ProductController::class, 'createpage'])->name('createpage');
+    Route::get('list', [ProductController::class, 'list'])->name('list');
+    Route::get('edit/{id}', [ProductController::class, 'edit'])->name('edit');
+    //methode
     Route::post('create', [ProductController::class, 'create'])->name('create');
-
+    Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
+    Route::delete('delete/{id}', [ProductController::class, 'delete'])->name('delete');
 });
+
+//order
+Route::group(["prefix" => "orders", "as" => "orders."], function () {
+    //page
+        Route::get('createpage', [OrderController::class, 'createpage'])->name('createpage');
+        Route::get('list', [OrderController::class, 'list'])->name('list');
+        Route::get('edit/{id}', [OrderController::class, 'edit'])->name('edit');
+
+        //methode
+        Route::post('update/{id}', [OrderController::class, 'update'])->name('update');
+        Route::post('create', [OrderController::class, 'create'])->name('create');
+        Route::delete('delete/{id}', [OrderController::class, 'delete'])->name('delete');
+
+
+    }
+
+);

@@ -37,18 +37,18 @@
                 <td>id</td>
                 <td>مدیریت</td>
             </tr>
-            @foreach ($list as $lists)
+            @foreach ($users as $users)
                 <tr>
-                    <td>{{ $lists->name }}</td>
-                    <td>{{ $lists->email }}</td>
-                    <td>{{ $lists->phonenumber }}</td>
-                    <td>{{ $lists->grade }}</td>
-                    <td>{{ $lists->date }}</td>
-                    <td>{{ $lists->city }}</td>
-                    <td>{{ $lists->state }}</td>
-                    <td>{{ $lists->id }}</td>
-                    <td><a href="{{ route('users.edit', ['id' => $lists->id]) }}">ویرایش</a>
-                        <form action="{{ route('users.delete', ['id' => $lists->id]) }}" method="POST">
+                    <td>{{ $users->name }}</td>
+                    <td>{{ $users->email }}</td>
+                    <td>{{ $users->phonenumber }}</td>
+                    <td>{{ $users->grade }}</td>
+                    <td>{{ $users->date }}</td>
+                    <td>{{ $users->city }}</td>
+                    <td>{{ $users->state }}</td>
+                    <td>{{ $users->id }}</td>
+                    <td><a href="{{ route('users.edit', ['id' => $users->id]) }}">ویرایش</a>
+                        <form action="{{ route('users.delete', ['id' => $users->id]) }}" method="POST">
                             @csrf
                             @method('delete')
                             <button type="submit">حذف</button>
